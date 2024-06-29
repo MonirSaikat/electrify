@@ -72,6 +72,7 @@ const createWindow = async () => {
   mainWindow = new BrowserWindow({
     show: false,
     width: 1024,
+    title: "",
     height: 728,
     autoHideMenuBar: true,
     icon: getAssetPath('icon.png'),
@@ -82,7 +83,9 @@ const createWindow = async () => {
     },
   });
 
-  mainWindow.loadURL(resolveHtmlPath('index.html'));
+  mainWindow.setTitle("MHVEN");
+
+  mainWindow.loadURL(resolveHtmlPath('/index.html'));
 
   mainWindow.on('ready-to-show', () => {
     if (!mainWindow) {
